@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <title>LOTR Card</title>
+</head>
+<body>
+    <div id="card">
+
+    </div>
+<script>
+    const card = document.getElementById("card");
+    fetch("https://ringsdb.com/api/public/card/01001.json")
+    .then(response => response.json())
+    .then(data => {
+        card.innerHTML = `
+        <h1>${data.name}</h1>
+        <img src="https://ringsdb.com/${data.imagesrc}">
+        `;
+    })
+
+</script>
+</body>
